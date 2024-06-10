@@ -42,7 +42,7 @@ void PlayEffect(LPCWSTR _soundname)
 {
 	// PLAY
 	MCI_PLAY_PARMS playEffect;
-	if (Effectid != 0)
+	if (Effectid != 0)  
 	{
 		mciSendCommand(Effectid, MCI_SEEK, MCI_SEEK_TO_START, (DWORD_PTR)&playEffect);
 		mciSendCommand(Effectid, MCI_CLOSE, NULL, (DWORD)NULL); // RAII
