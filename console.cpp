@@ -1,5 +1,3 @@
-#include<Windows.h>
-#include<random>
 #include "console.h"
 
 void FullScreen()
