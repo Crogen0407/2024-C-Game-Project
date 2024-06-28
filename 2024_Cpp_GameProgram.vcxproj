@@ -159,6 +159,7 @@
     <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="TalkText\TalkText.txt" />
     <Text Include="UI\GamePanel.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

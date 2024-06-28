@@ -15,7 +15,6 @@ void InfoRender()
 	{
 		if (KeyController() == KEY::SPACE)
 		{
-			system("cls");
 			break;
 		}
 	}

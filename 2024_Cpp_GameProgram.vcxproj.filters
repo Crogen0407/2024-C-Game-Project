@@ -82,5 +82,8 @@
     <Text Include="UI\GamePanel.txt">
       <Filter>리소스 파일\UI</Filter>
     </Text>
+    <Text Include="TalkText\TalkText.txt">
+      <Filter>리소스 파일\TalkText</Filter>
+    </Text>
   </ItemGroup>
 </Project>
