@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Component.cpp" />
     <ClCompile Include="console.cpp" />
     <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GameLogic.cpp" />
@@ -149,7 +148,6 @@
     <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Component.h" />
     <ClInclude Include="console.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="GameLogic.h" />

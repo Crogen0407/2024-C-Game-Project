@@ -1,9 +1,8 @@
 #pragma once
-#include "Component.h"
 #include<Windows.h>
 #include <iostream>
 
-class UI : public Component
+class UI
 {
 public:
 	COORD position;

@@ -8,9 +8,12 @@ std::string ReadFile(std::string filePath)
 
 	if (readFile.is_open())
 	{
-		if (readFile.fail())
-			return "";
-		ss << readFile.rdbuf() << std::endl;;
+		while (!readFile.eof())
+		{
+			std::string str;
+			getline(readFile, str);
+			ss << str << std::endl;
+		}
 	}
 
 	return ss.str();
