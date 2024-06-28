@@ -6,8 +6,6 @@ void Render()
 	int screenWidth;
 	FullScreen();
 	screenWidth = DrawGamePanel();
-	CursorVis(false, 1);
-
 
 	std::vector<std::string> talkVec = ReadTalkTextFile("TalkText/TalkText.txt");
 	int currentTalkIndex = 0;
@@ -24,7 +22,7 @@ void Render()
 		int middlePos = (screenWidth - characterText[0].length())/2;
 		for (size_t i = 0; i < characterText.size(); ++i)
 		{
-			GotoPos(middlePos, 10 + i);
+			Gotoxy(middlePos, 10 + i);
 			std::cout << characterText[i];
 			
 		}
@@ -32,12 +30,12 @@ void Render()
 
 		int currentCharIndex = 0;
 		int currentAllCharIndex = 0;
-		GotoPos(5, 66);
+		Gotoxy(5, 66);
 		std::cout << nameText;
 		int posY = 71;
 		while (talkText.size() > currentAllCharIndex)
 		{
-			GotoPos(10 + currentCharIndex * 2, posY);
+			Gotoxy(10 + currentCharIndex * 2, posY);
 			if (talkText[currentAllCharIndex] == '|')
 			{
 				Sleep(100);

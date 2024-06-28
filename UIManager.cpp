@@ -3,7 +3,7 @@
 
 int DrawGamePanel()
 {
-	GotoPos(0, 0);
+	Gotoxy(0, 0);
 	std::string res = ReadFile("UI/GamePanel.txt");
 	std::cout << res;
 
