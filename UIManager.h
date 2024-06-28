@@ -2,6 +2,6 @@
 #include "GameData.h"
 #include "console.h"
 
-void DrawGamePanel();
+int DrawGamePanel();
 void DrawCharacter(std::string characterName);
 void DrawBackground(std::string backgroundName);

@@ -1,10 +1,13 @@
 #include "UIManager.h"
+#include "stringExtension.h"
 
-void DrawGamePanel()
+int DrawGamePanel()
 {
 	GotoPos(0, 0);
+	std::string res = ReadFile("UI/GamePanel.txt");
+	std::cout << res;
 
-	std::cout << ReadFile("UI/GamePanel.txt");
+	return splitString(res, '\n')[0].length();
 }
 
 void DrawCharacter(std::string characterName)
