@@ -1,33 +1,50 @@
-#include <iostream>
-#include <windows.h>
-#include <fstream>
-#include <string>
-#include "TitleScene.h"
+﻿#include <Windows.h>
+#include <conio.h>
+#include "UIManager.h"
+#include "GameData.h"
 #include "console.h"
-#include "File.h"
 
-int main() {
-	system("mode con:cols=150 lines=50");
-	/*if (!TitleScene())
-	{
-		return 0;
-	}
-	else
-	{
-		while (1)
-		{
-		}
-	}*/
+int main()
+{
+	FullScreen();
+	DrawGamePanel();
 
-	std::ifstream readFile;
-	readFile.open("Dialogue.txt");
-	if (readFile.is_open())
+	std::vector<std::string> talkVec = ReadTalkTextFile("TalkText/TalkText.txt");
+	int currentTalkIndex = 0;
+
+	while (currentTalkIndex < talkVec.size())
 	{
-		while (!readFile.eof())
+		Sleep(1000);
+		std::string temp = talkVec[currentTalkIndex];
+		int currentCharIndex = 0;
+		while (temp.size() > currentCharIndex)
 		{
-			char arr[256];
-			readFile.getline(arr, 256);
+			GotoPos(10 * currentCharIndex, -100);
+			if (temp[currentCharIndex] == '\\')
+			{
+				Sleep(100);
+			}
+			else
+			{
+				std::cout << temp[currentCharIndex];
+			}
+			++currentCharIndex;
+			Sleep(50);
 		}
+
+		/*while(1)
+		{
+			if (std::_getch())
+			{
+				Sleep(1000);
+				break;
+			}
+		}*/
+
+		++currentTalkIndex;;
+
+		//기존 글자 없애기
+		system("cls");
+		DrawGamePanel();
 	}
-	readFile.close();
 }

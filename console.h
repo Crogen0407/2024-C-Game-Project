@@ -1,4 +1,7 @@
 #pragma once
+#include<Windows.h>
+#include<random>
+
 void FullScreen();
 void Gotoxy(int _x, int _y);
 BOOL Gotoxytest(int _x, int _y);

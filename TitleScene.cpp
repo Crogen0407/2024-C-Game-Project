@@ -41,7 +41,6 @@ void StoryRender()
 	{
 		if (KeyController() == KEY::SPACE)
 		{
-			system("cls");
 			break;
 		}
 	}
