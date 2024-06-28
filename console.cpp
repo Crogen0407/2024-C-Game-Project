@@ -1,5 +1,4 @@
 #include<Windows.h>
-#include<random>
 #include "console.h"
 
 void FullScreen()
@@ -9,59 +8,53 @@ void FullScreen()
 	//	CONSOLE_FULLSCREEN_MODE, 0);
 	ShowWindow(GetConsoleWindow(),
 		SW_MAXIMIZE);
-	::SendMessage(GetConsoleWindow(), 
-		WM_SYSKEYDOWN
-		,VK_RETURN, 0x20000000);
 }
 
 void Gotoxy(int _x, int _y)
 {
-	// 콘솔창 핸들
-	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	// 커서관련 구조체
-	COORD Cur = { _x, _y }; // {_x*2,_y}가 더 자연스러울 수 있음.
+	COORD Cur = { _x * 2, _y }; // {_x*2,_y}가 더 자연스러울 수 있음.
 	// 커서포지션세팅하는 함수.
-	SetConsoleCursorPosition(hOut, Cur);
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE)
+		, Cur);
 }
 
-BOOL GotoPos(int _x, int _y)
+BOOL Gotoxytest(int _x, int _y)
 {
-	// 콘솔창 핸들
-	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	// 커서관련 구조체
-	COORD Cur = { _x, _y }; // {_x*2,_y}가 더 자연스러울 수 있음.
-	// 커서포지션세팅하는 함수.
-	return SetConsoleCursorPosition(hOut, Cur);
+	//COORD Cur = { _x, _y };
+	COORD Cur = { _x * 2, _y };
+	// 콘솔 커서 위치를 딱 세팅
+	return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE)
+		, Cur);
 }
-
 COORD CursorPos()
 {
-	CONSOLE_SCREEN_BUFFER_INFO buf;
+	CONSOLE_SCREEN_BUFFER_INFO Buf;
 	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE)
-	,&buf);
-	return buf.dwCursorPosition;
+		, &Buf);
+	return Buf.dwCursorPosition;
 }
 
-void CursorVis(bool _vis, DWORD _size)
+void SetCursorVis(bool _vis, DWORD _size)
 {
 	CONSOLE_CURSOR_INFO curinfo;
-	curinfo.dwSize = _size; // 커서굵기 1~100
-	curinfo.bVisible = _vis; // on, off
+	curinfo.dwSize = _size;  // 커서 굵기(1~100)
+	curinfo.bVisible = _vis; // True: On, False: Off
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE)
-	, &curinfo);
+		, &curinfo);
 }
 
 void SetColor(int _textcolor, int _bgcolor)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE)
-	,(_bgcolor << 4) | _textcolor);
+		, (_bgcolor << 4) | _textcolor);
 }
 
 int GetColor()
 {
 	CONSOLE_SCREEN_BUFFER_INFO info;
 	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE)
-	,&info);
+		, &info);
 	int color = info.wAttributes & 0xf;
 	return color;
 }
@@ -69,10 +62,12 @@ int GetColor()
 void LockResize()
 {
 	HWND console = GetConsoleWindow();
-	if (nullptr != console) // 요다 표현법
-	{ 
+	//NULL;
+	// modern c++ 
+	if (console != nullptr)
+	{
 		LONG style = GetWindowLong(console, GWL_STYLE);
-		style &= ~WS_MAXIMIZEBOX & ~WS_SIZEBOX;// &~WS_CAPTION;
+		style &= ~WS_MAXIMIZEBOX & ~WS_SIZEBOX;// &~WS_HSCROLL;// &~WS_CAPTION;
 		SetWindowLong(console, GWL_STYLE, style);
 	}
 }
@@ -85,23 +80,4 @@ COORD GetConsoleResolution()
 	short width = info.srWindow.Right - info.srWindow.Left + 1;
 	short height = info.srWindow.Bottom - info.srWindow.Top + 1;
 	return COORD{ width, height };
-//	= () {}
-	//int a = 10;
-	//int b(10);
-	//int c( 1.2f);
-	//return COORD((int)width, (int)height);
-}
-
-void SetFontSize(UINT _weight, UINT _fontx, UINT _fonty)
-{
-	CONSOLE_FONT_INFOEX font;
-	font.cbSize = sizeof(font);
-
-	HANDLE hout = GetStdHandle(STD_OUTPUT_HANDLE);
-	
-	GetCurrentConsoleFontEx(hout, false, &font);
-	font.FontWeight = _weight;
-	font.dwFontSize.X = _fontx;
-	font.dwFontSize.Y = _fonty;
-	SetCurrentConsoleFontEx(hout, false, &font);
 }

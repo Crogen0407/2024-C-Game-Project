@@ -2,19 +2,20 @@
 enum class MENU
 {
 	START,
-	INFO,
+	STORY,
+	SAVE,
 	QUIT
 };
 enum class KEY
 {
+	NONE,
 	UP,
 	DOWN,
-	SPACE,
-	FALE
+	SPACE
 };
 bool TitleScene();
 void TitleRender();
-void InfoRender();
+void StoryRender();
 MENU MenuRender();
 KEY KeyController();
 void EnterAnimation();
