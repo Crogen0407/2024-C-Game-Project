@@ -26,7 +26,7 @@ void OnGameScene()
 		else
 		{
 			//UI 다시 출력
-			DrawGamePanel();
+			DrawGamePanel(); 
 
 			std::vector<std::string> ret = splitString(talkVec[currentTalkIndex], ',');
 			std::string nameText = ret[0];
