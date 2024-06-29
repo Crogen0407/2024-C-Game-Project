@@ -66,6 +66,9 @@
     <ClCompile Include="TextController.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="console.h">

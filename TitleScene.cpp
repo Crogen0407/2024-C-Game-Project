@@ -88,8 +88,6 @@ MENU MenuRender()
 			else if (originy + 1 == y)
 				return MENU::STORY;
 			else if (originy + 2 == y)
-				return MENU::SAVE;
-			else if (originy + 3 == y)
 				return MENU::QUIT;
 		}
 		break;
