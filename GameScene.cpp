@@ -6,7 +6,7 @@
 #include "Mci.h"
 #include <string>
 
-void Render()
+void OnGameScene()
 {
 	int screenWidth = 71;
 	FullScreen();
