@@ -164,8 +164,10 @@
     <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Character\Boy1.txt" />
     <Text Include="Character\Character.txt" />
     <Text Include="Character\Character1.txt" />
+    <Text Include="Character\Null.txt" />
     <Text Include="TalkText\TalkText.txt" />
     <Text Include="UI\GamePanel.txt" />
   </ItemGroup>
@@ -173,6 +175,7 @@
     <Media Include="Sound\BGM\BGM_LostSoul.mp3" />
     <Media Include="Sound\BGM\the-wobbly-dance-214976.mp3" />
     <Media Include="Sound\SFX\SFX_Pistol Gunshot.mp3" />
+    <Media Include="Sound\SFX\Whoosh 9-low-2.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

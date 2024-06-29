@@ -115,6 +115,12 @@
     <Text Include="Character\Character1.txt">
       <Filter>리소스 파일\Character</Filter>
     </Text>
+    <Text Include="Character\Null.txt">
+      <Filter>리소스 파일\Character</Filter>
+    </Text>
+    <Text Include="Character\Boy1.txt">
+      <Filter>리소스 파일\Character</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Sound\BGM\the-wobbly-dance-214976.mp3">
@@ -124,6 +130,9 @@
       <Filter>리소스 파일\Sound\BGM</Filter>
     </Media>
     <Media Include="Sound\SFX\SFX_Pistol Gunshot.mp3">
+      <Filter>리소스 파일\Sound\SFX</Filter>
+    </Media>
+    <Media Include="Sound\SFX\Whoosh 9-low-2.mp3">
       <Filter>리소스 파일\Sound\SFX</Filter>
     </Media>
   </ItemGroup>
