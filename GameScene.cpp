@@ -4,6 +4,7 @@
 #include "UIManager.h"
 #include "GameData.h"
 #include "Mci.h"
+#include <string>
 
 void Render()
 {
@@ -34,27 +35,39 @@ void Render()
 			std::string BGMText = ret[3];
 			std::string SFXText = ret[4];
 
-			//캐릭터 출력
-			DrawCharacter(CharacterText, screenWidth);
+			//캐릭터 출력 (없으면 출력 안함)
+			if (!CharacterText._Equal("-"))
+				DrawCharacter(CharacterText, screenWidth);
 
 			Sleep(1000);
 
-			//이름 출력
-			RenderNameText(nameText);
+			//이름 출력 (없으면 출력 안함)
+			if (!nameText._Equal("-"))
+				RenderNameText(nameText);
 
 			//TalkText 출력
-			RenderTalkText(talkText);
+			if (!talkText._Equal("-"))
+				RenderTalkText(talkText);
 
 			//BGM 재생 (없으면 기존 꺼 재생)
 			if (!BGMText._Equal("-"))
-				PlayBgm(s2ws("Sound/BGM/" + BGMText).c_str(), 5);
+			{
+				std::vector<std::string> bgmRes = splitString(BGMText, '/');
+				std::string fileName = bgmRes[0];
+				std::string volume = bgmRes[1];
+				PlayBgm(s2ws("Sound/BGM/" + fileName).c_str(), std::stoi(volume));
+			}
 
 			//SFX 재생 (없으면 재생 안함)
 			if (!SFXText._Equal("-"))
-				PlayBgm(s2ws("Sound/SFX/" + SFXText).c_str(), 5);
+			{
+				std::vector<std::string> sfxRes = splitString(SFXText, '/');
+				std::string fileName = sfxRes[0];
+				std::string volume = sfxRes[1];
+				PlayBgm(s2ws("Sound/SFX/" + fileName).c_str(), std::stoi(volume));
+			}
 
 			//입력 기다리기
-
 			while (1)
 			{
 				if (_kbhit() > 0)

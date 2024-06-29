@@ -163,14 +163,13 @@
     <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="C:\Users\USER\OneDrive\바탕 화면\Girl1.txt" />
     <Text Include="Character\Character.txt" />
+    <Text Include="Character\Character1.txt" />
     <Text Include="TalkText\TalkText.txt" />
     <Text Include="UI\GamePanel.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="C:\Users\USER\Downloads\Anxiety Rise 2.mp3" />
-    <Media Include="C:\Users\USER\Downloads\Car Door Close Outside.mp3" />
+    <Media Include="Sound\BGM\the-wobbly-dance-214976.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
