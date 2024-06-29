@@ -49,8 +49,6 @@ MENU MenuRender()
 	Gotoxy(x, y + 1);
 	cout << "스토리보기" << endl;
 	Gotoxy(x, y + 2);
-	cout << "저장" << endl;
-	Gotoxy(x, y + 3);
 	cout << "게임종료" << endl;
 	while (1)
 	{
@@ -71,7 +69,7 @@ MENU MenuRender()
 		break;
 		case KEY::DOWN:
 		{
-			if (y < originy + 3)
+			if (y < originy + 2)
 			{
 				Gotoxy(x - 2, y);
 				cout << " ";
@@ -80,7 +78,7 @@ MENU MenuRender()
 				Sleep(200);
 			}
 		}
-		break;
+		break;	
 		case KEY::SPACE:
 		{
 			if (originy == y)
@@ -143,8 +141,6 @@ bool TitleScene()
 		case MENU::STORY:
 			StoryRender();
 			break;
-		case MENU::SAVE:
-			return false;
 		case MENU::QUIT:
 			return false;
 		}
