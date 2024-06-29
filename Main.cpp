@@ -3,12 +3,5 @@
 
 int main()
 {
-	if (!TitleScene())
-	{
-		return 0;
-	}
-	else
-	{
-		OnGameScene();
-	}
+	OnGameScene();
 }
