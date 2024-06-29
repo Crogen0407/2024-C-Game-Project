@@ -146,6 +146,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mci.cpp" />
     <ClCompile Include="stringExtension.cpp" />
+    <ClCompile Include="TextController.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Mci.h" />
     <ClInclude Include="stringExtension.h" />
+    <ClInclude Include="TextController.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIManager.h" />

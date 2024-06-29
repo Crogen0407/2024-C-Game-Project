@@ -3,8 +3,7 @@
 #include <conio.h>
 #include <string>
 #include <sstream>
-#include "UIManager.h"
-#include "GameData.h"
+#include <vector>
 
 std::vector<std::string> splitString(const std::string& str, char delimiter);
 void Render();

@@ -1,11 +1,16 @@
 #include "GameScene.h"
 #include "stringExtension.h"
+#include "TextController.h"
+#include "UIManager.h"
+#include "GameData.h"
+#include "Mci.h"
 
 void Render()
 {
-	int screenWidth;
+	int screenWidth = 71;
 	FullScreen();
 	screenWidth = DrawGamePanel();
+	system("cls");
 
 	std::vector<std::string> talkVec = ReadTalkTextFile("TalkText/TalkText.txt");
 	int currentTalkIndex = 0;
@@ -13,64 +18,62 @@ void Render()
 	while (currentTalkIndex < talkVec.size())
 	{
 		//파일 로드
-		std::vector<std::string> ret = splitString(talkVec[currentTalkIndex], ',');
-		std::string nameText = ret[0];
-		std::string talkText = ret[1];
-		std::string imageText = ret[2];
-
-		std::vector<std::string> characterText = ReadFileForVector("Character/" + imageText + ".txt");
-		int middlePos = (screenWidth - characterText[0].length())/2;
-		for (size_t i = 0; i < characterText.size(); ++i)
+		if (talkVec[currentTalkIndex] == "-")
 		{
-			Gotoxy(middlePos, 10 + i);
-			std::cout << characterText[i];
-			
+			Sleep(5000);
 		}
-		Sleep(1000);
-
-		int currentCharIndex = 0;
-		int currentAllCharIndex = 0;
-		Gotoxy(5, 66);
-		std::cout << nameText;
-		int posY = 71;
-		while (talkText.size() > currentAllCharIndex)
+		else
 		{
-			Gotoxy(10 + currentCharIndex * 2, posY);
-			if (talkText[currentAllCharIndex] == '|')
-			{
-				Sleep(100);
-			}
-			else if (talkText[currentAllCharIndex] == '\\')
-			{
-				currentCharIndex = -2;
-				posY+=2;
-			}
-			else
-			{
-				std::cout << talkText[currentAllCharIndex];
-			}
-			++currentCharIndex;
-			++currentAllCharIndex;
-			Sleep(20);
-		}
+			//UI 다시 출력
+			DrawGamePanel();
 
-		while (1)
-		{
-			if (_kbhit() > 0)
+			std::vector<std::string> ret = splitString(talkVec[currentTalkIndex], ',');
+			std::string nameText = ret[0];
+			std::string talkText = ret[1];
+			std::string CharacterText = ret[2];
+			std::string BGMText = ret[3];
+			std::string SFXText = ret[4];
+
+			//캐릭터 출력
+			DrawCharacter(CharacterText, screenWidth);
+
+			Sleep(1000);
+
+			//이름 출력
+			RenderNameText(nameText);
+
+			//TalkText 출력
+			RenderTalkText(talkText);
+
+			//BGM 재생 (없으면 기존 꺼 재생)
+			if (!BGMText._Equal("-"))
+				PlayBgm(s2ws("Sound/BGM/" + BGMText).c_str(), 5);
+
+			//SFX 재생 (없으면 재생 안함)
+			if (!SFXText._Equal("-"))
+				PlayBgm(s2ws("Sound/SFX/" + SFXText).c_str(), 5);
+
+			//입력 기다리기
+
+			while (1)
 			{
-				int nKey;
-				nKey = _getch();
-				if (_getch() == 32 || _getch() == 13)
+				if (_kbhit() > 0)
 				{
-					break;
+					int nKey;
+					nKey = _getch();
+					if (_getch() == 32 || _getch() == 13)
+					{
+						break;
+					}
 				}
 			}
 		}
+
+		
 
 		++currentTalkIndex;;
 
 		//기존 글자 없애기
 		system("cls");
-		DrawGamePanel();
 	}
 }
