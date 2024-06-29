@@ -164,8 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Character\Character.txt" />
+    <Text Include="Character\Character1.txt" />
     <Text Include="TalkText\TalkText.txt" />
     <Text Include="UI\GamePanel.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sound\BGM\the-wobbly-dance-214976.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

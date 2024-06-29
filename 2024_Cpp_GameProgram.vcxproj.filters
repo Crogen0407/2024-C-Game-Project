@@ -109,5 +109,13 @@
     <Text Include="Character\Character.txt">
       <Filter>리소스 파일\Character</Filter>
     </Text>
+    <Text Include="Character\Character1.txt">
+      <Filter>리소스 파일\Character</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sound\BGM\the-wobbly-dance-214976.mp3">
+      <Filter>리소스 파일\Sound\BGM</Filter>
+    </Media>
   </ItemGroup>
 </Project>
