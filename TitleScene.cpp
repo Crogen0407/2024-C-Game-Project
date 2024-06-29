@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include "TitleScene.h"
 #include "console.h"
+#include "GameScene.h"
 
 void TitleRender()
 {
@@ -123,6 +124,8 @@ void EnterAnimation()
 		system("cls");
 		Sleep(animatime);
 	}
+	system("cls");
+	OnGameScene();
 }
 
 bool TitleScene()
