@@ -147,6 +147,7 @@
     <ClCompile Include="Mci.cpp" />
     <ClCompile Include="stringExtension.cpp" />
     <ClCompile Include="TextController.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
