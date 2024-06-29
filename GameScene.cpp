@@ -64,7 +64,7 @@ void Render()
 				std::vector<std::string> sfxRes = splitString(SFXText, '/');
 				std::string fileName = sfxRes[0];
 				std::string volume = sfxRes[1];
-				PlayBgm(s2ws("Sound/SFX/" + fileName).c_str(), std::stoi(volume));
+				PlayEffect(s2ws("Sound/SFX/" + fileName).c_str());
 			}
 
 			//입력 기다리기

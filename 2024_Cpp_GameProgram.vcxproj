@@ -169,7 +169,9 @@
     <Text Include="UI\GamePanel.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="Sound\BGM\BGM_LostSoul.mp3" />
     <Media Include="Sound\BGM\the-wobbly-dance-214976.mp3" />
+    <Media Include="Sound\SFX\SFX_Pistol Gunshot.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

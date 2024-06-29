@@ -1,4 +1,4 @@
-???,나 찾았어?,Character,-,-
+???,나 찾았어?,Character,-,SFX_Pistol Gunshot.mp3/100
 나,흐음... 여긴가?,Character,-,-
 나,저 건물||인 것 같네,Character,-,-
 나,건물로 가기전에 우선 주민들과 대화를 해보는게 좋을 것 같은데...\어디로 가봐야 하려나,Character,-,-
