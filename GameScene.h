@@ -6,4 +6,4 @@
 #include <vector>
 
 std::vector<std::string> splitString(const std::string& str, char delimiter);
-void Render();
+void OnGameScene();
