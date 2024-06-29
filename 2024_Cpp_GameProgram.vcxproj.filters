@@ -25,6 +25,15 @@
     <Filter Include="리소스 파일\Character">
       <UniqueIdentifier>{67d335fb-db6d-45ab-9e7e-1f18f3fbb7b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\Sound">
+      <UniqueIdentifier>{9055e061-28df-48aa-83da-8bbb66b6f130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Sound\BGM">
+      <UniqueIdentifier>{f82ae761-f777-487e-ad77-091186200536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Sound\SFX">
+      <UniqueIdentifier>{050a2ddb-2d1f-4d46-86d0-6392f27814be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="console.cpp">
@@ -54,6 +63,9 @@
     <ClCompile Include="stringExtension.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="TextController.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="console.h">
@@ -81,6 +93,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="stringExtension.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TextController.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

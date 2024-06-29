@@ -1,7 +1,7 @@
-#include<Windows.h>
-#include<mmsystem.h>
-#include<Digitalv.h>
-#include<string>
+#include <Windows.h>
+#include <mmsystem.h>
+#include <Digitalv.h>
+#include <string>
 #include "mci.h"
 #pragma comment(lib, "winmm.lib")
 
@@ -32,7 +32,7 @@ void PlayBgm(LPCWSTR _soundname, int _volume)
 	//// 일시정지
 	//mciSendCommand(Bgmid, MCI_PAUSE, MCI_NOTIFY, (DWORD_PTR)&playBgm);
 	//// 다시시작
-	//mciSendCommand(Bgmid, MCI_RESUME, NULL, NULL);
+	mciSendCommand(Bgmid, MCI_RESUME, NULL, NULL);
 	//// 닫기
 	//mciSendCommand(Bgmid, MCI_CLOSE, NULL, NULL);
 

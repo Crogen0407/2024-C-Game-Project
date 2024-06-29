@@ -3,5 +3,5 @@
 #include "console.h"
 
 int DrawGamePanel();
-void DrawCharacter(std::string characterName);
+void DrawCharacter(std::string characterName, int screenWidth);
 void DrawBackground(std::string backgroundName);
