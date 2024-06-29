@@ -9,7 +9,6 @@
 void OnGameScene()
 {
 	int screenWidth = 71;
-	FullScreen();
 	screenWidth = DrawGamePanel();
 	system("cls");
 
