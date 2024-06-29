@@ -45,7 +45,7 @@ MENU MenuRender()
 	int y = Resolution.Y / 2.5;
 	int originy = y;
 	Gotoxy(x, y);
-	cout << "처음부터" << endl;
+	cout << "시작하기" << endl;
 	Gotoxy(x, y + 1);
 	cout << "스토리보기" << endl;
 	Gotoxy(x, y + 2);

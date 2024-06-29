@@ -3,5 +3,12 @@
 
 int main()
 {
-	Render();
+	if (!TitleScene())
+	{
+		return 0;
+	}
+	else
+	{
+		OnGameScene();
+	}
 }
